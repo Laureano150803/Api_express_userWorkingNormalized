@@ -2,10 +2,14 @@ import passport from "passport";
 import passportJwt from 'passport-jwt'
 import User from "../models/User.js";
 
+
+const jwtOptions ={
+    secretOrKey:process.env.SECRET
+}
 passport.use(
     new passportJwt.Strategy({
         jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderAsBearerToken(),
-        secretOrKey:process.env.SECRET
+        secretOrKey:jwtOptions
     },
     async(jwt_payload, done)=>{
         try {
