@@ -1,5 +1,6 @@
 import mongoose, { Types } from "mongoose";
 
+
 const disponibilidadSchema = new mongoose.Schema({
     diaSemana: { type: Number, required: true },
     inicio: { type: String, required: true },
@@ -7,6 +8,7 @@ const disponibilidadSchema = new mongoose.Schema({
 }, {
     _id: false
 });
+
 
 const schema = new mongoose.Schema({
     nombre: { type: String, required: true },
