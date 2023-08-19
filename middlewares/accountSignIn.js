@@ -7,7 +7,6 @@ async function accountSignIn(req, res, next) {
             req.user = {
                 id: user._id,
                 email: user.email,
-                photo: user.photo,
                 password: user.password,
                 role: user.role
             };

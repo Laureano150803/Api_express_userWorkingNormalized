@@ -8,7 +8,6 @@ import singIn from '../controllers/users/signIn.js'
 import passwordIsOk from '../middlewares/passWordIsOk.js';
 import passport from '../middlewares/passport.js'
 import signout from '../controllers/users/signout.js';
-
 router.post('/signup',accountExistsSignUp,  signUp)
 router.post('/signin',accountSignIn,passwordIsOk, singIn)
 router.post('/signout',passport.authenticate('jwt', {session:false}), signout)
