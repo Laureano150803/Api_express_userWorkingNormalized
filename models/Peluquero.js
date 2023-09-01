@@ -14,3 +14,4 @@ let collection= 'peluqueros'
 const Peluquero = mongoose.model(collection, schema);
 
 export default Peluquero;
+

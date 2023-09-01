@@ -1,5 +1,6 @@
 import mongoose, { Types } from "mongoose";
 
+
 const citaSchema = new mongoose.Schema({
   calendario_id:{type:String, required:true},
   summary:{type:String, required:true},
@@ -17,3 +18,4 @@ let collection = 'citas'
 const Cita = mongoose.model(collection, citaSchema);
 
 export default Cita;
+
