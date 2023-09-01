@@ -1,18 +1,21 @@
 import mongoose, { Types } from "mongoose";
 
-const schema = new mongoose.Schema({
-    fecha:{type:Date , required:true},
-    lugar:{type:String , required:true},
-    clienteId:{type:Types.ObjectId ,ref:'clientes',required:true},
-    peluqueroId:{type:Types.ObjectId , ref:'peluqueros', required: true},
-    estado:{type:String , required:true}
 
-
-},{
+const citaSchema = new mongoose.Schema({
+  calendario_id:{type:String, required:true},
+  summary:{type:String, required:true},
+  description:{type:String, required:true},
+  inicio:{type:String, required:true},
+  fin:{type:String, required:true},
+  status:{type:String, required:true},
+  cliente_id:{type:Types.ObjectId, ref:'clientes', required:true},
+  peluquero_id:{type:Types.ObjectId, ref:'peluqueros', required:true}
+}, {
     timestamps: true
-})
-
+});
 let collection = 'citas'
-let Cita = mongoose.model(collection,schema)
 
-export default Cita
+const Cita = mongoose.model(collection, citaSchema);
+
+export default Cita;
+
