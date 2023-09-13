@@ -6,6 +6,7 @@ const schema = new mongoose.Schema({
     telefono:{type:String, required:true},
     cedula:{type:String, required:true},
     user_id:{type:Types.ObjectId, ref:'users', required:true}
+
 },{
     timestamps: true
 })
