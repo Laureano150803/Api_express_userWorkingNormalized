@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-titulo:{type:String , required:true },
 nombre:{type:String , required:true },
 descripcion:{type:String , required:true },
 precio:{type:Number, required:true },

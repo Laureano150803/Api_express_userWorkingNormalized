@@ -1,4 +1,4 @@
-import Servicio from "../../models/Sevicio";
+import Servicio from "../../models/Sevicio.js";
 
 let deleteById = async(req,res,next) =>{
     try{

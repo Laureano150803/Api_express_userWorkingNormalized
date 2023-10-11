@@ -12,7 +12,7 @@ let create = async(req, res, next)=>{
         await User.findByIdAndUpdate(
             req.user._id,
             {
-                role:1
+                role:2
             },
             {new:true})
 
