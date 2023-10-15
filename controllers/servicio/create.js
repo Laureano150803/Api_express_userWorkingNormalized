@@ -1,4 +1,4 @@
-import Servicio from '../../models/Sevicio.js'
+import Servicio from '../../models/Servicio.js'
 
 let createService =  async(req,res,next) =>{
     try{
