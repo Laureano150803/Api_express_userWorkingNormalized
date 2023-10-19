@@ -11,7 +11,7 @@ import signout from '../controllers/users/signout.js';
 import validator from '../middlewares/validator.js';
 import { userCreateSignIn, userCreateSignUp } from '../schemas/usersSign.js';
 router.post('/signup',validator(userCreateSignUp),accountExistsSignUp,  signUp)
-router.post('/signin',/* validator(userCreateSignIn), */accountSignIn,passwordIsOk, singIn)
+router.post('/signin',validator(userCreateSignIn),accountSignIn,passwordIsOk, singIn)
 router.post('/signout',passport.authenticate('jwt', {session:false}), signout)
 
 
