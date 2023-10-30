@@ -11,13 +11,13 @@ import cancel from "../controllers/google_calendar/cancel.js";
 import updateStatus from "../controllers/google_calendar/updateStatus.js";
 import allPendings from "../controllers/google_calendar/getAllPendings.js";
 import allDone from "../controllers/google_calendar/getAllDone.js";
-router.get('/appoiment/:p_id',passport.authenticate('jwt', {session:false}), citaByPeluquero)
+router.get('/appointment/:p_id',passport.authenticate('jwt', {session:false}), citaByPeluquero)
 router.delete('/:id',passport.authenticate('jwt', {session:false}), cancel)
-router.get('/'/* ,passport.authenticate('jwt', {session:false}) */, googleAccountVerify)
+router.get('/',passport.authenticate('jwt', {session:false}), googleAccountVerify)
 router.get('/redirect', redirect)
-router.post('/new/appoiment',passport.authenticate('jwt', {session:false}),isClient, create)
-router.get('/all-appoiments',passport.authenticate('jwt', {session:false}), getAllEvents)
-router.patch('/appoiment/:c_id',passport.authenticate('jwt', {session:false}), updateStatus)
-router.get('/pending/appoiments', allPendings)
-router.get('/done/appoiments', allDone)
+router.post('/new/appointment',passport.authenticate('jwt', {session:false}),isClient , create)
+router.get('/all-appointments',passport.authenticate('jwt', {session:false}), getAllEvents)
+router.patch('/appointment/:c_id',passport.authenticate('jwt', {session:false}), updateStatus)
+router.get('/pending/appointments', allPendings)
+router.get('/done/appointments', allDone)
 export default router
