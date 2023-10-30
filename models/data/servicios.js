@@ -1,12 +1,15 @@
 export const servicios=[{
+    
     nombre: 'Corte de Barba Personalizado',
+    foto:'https://cdn-icons-png.flaticon.com/256/8837/8837448.png',
     descripcion:'Nuestros barberos altamente capacitados escucharán tus preferencias y te asesorarán para crear el estilo de barba perfecto que se adapte a tu rostro y estilo de vida.',
-    precio:12000
+    precio:10000
 },
 {
     nombre: 'Afeitado de Precisión',
+    foto:'https://cdn-icons-png.flaticon.com/256/8838/8838018.png ',
     descripcion:'Experimenta la suavidad de un afeitado clásico con cuchilla de afeitar, realizado con destreza para obtener un resultado limpio y sin irritaciones.',
-    precio:10000
+    precio:12000
 },
 {
     nombre: 'Tratamientos Capilares de Lujo',

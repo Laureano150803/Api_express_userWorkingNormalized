@@ -3,13 +3,16 @@ import '../../config/database.js'
 import {users} from './users.js'
 import {clients} from './clients.js'
 import {peluqueros} from './peluqueros.js'
-import {servicios} from './servicios.js'
+import {servicios} from './Servicio.js'
+import {servicesTypes} from './servicesTypes.js'
+import ServicesTypes from '../ServicesTypes.js'
 import User from '../User.js'
 import Cliente from '../Cliente.js'
 import Peluquero from '../Peluquero.js'
-import Servicio from '../sevicio.js'
+import Servicio from '../Servicio.js'
 
 let newUsers = async(users)=> await User.insertMany(users)
+let newServicesTypes = async(servicesTypes) => await ServicesTypes.insertMany(servicesTypes)
 
 let newRoles = async(rol1, rol2)=>{
     for (let client of rol1){
@@ -23,10 +26,18 @@ let newRoles = async(rol1, rol2)=>{
         await Peluquero.create(peluquero)
     }
 }
-let newServices = async(servicios)=> await Servicio.insertMany(servicios)
+let newServices = async(typeServices)=>{
+    for(let service of typeServices){
+        let typeServ = await ServicesTypes.findOne({name:service.serviceTypeId})
+        service.serviceTypeId=typeServ._id
+        await Servicio.create(service)
+    }
+
+}
 
 let data=async()=>{
     await newUsers(users)
+    await newServicesTypes(servicesTypes)
     await newRoles(clients, peluqueros)
     await newServices(servicios)
 }

@@ -1,4 +1,4 @@
-import Servicio from "../../models/Sevicio.js";
+import Servicio from "../../models/Servicio.js";
  let update = async(req,res,next) =>{
     try{
         let updateAll = await Servicio.findByIdAndUpdate(req.params.id , {titulo:req.body.titulo,descripcion:req.body.descripcion,precio:req.body.precio},{new:true} )
