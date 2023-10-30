@@ -9,6 +9,7 @@ serviceTypeId:{type:Types.ObjectId, ref:'servicesTypes',  required:true }
     timestamps: true
 })
 
+
 let collection = 'servicios'
 let Servicio = mongoose.model(collection,schema)
 
