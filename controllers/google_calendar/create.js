@@ -10,6 +10,7 @@ const calendar = google.calendar({
   });
 
 let create = async(req, res, next)=>{
+    const fechaFinal = dayjs(req.body.inicio).add(2, 'hour')
   
     const event = {
       summary: 'Cita con AirFashion',
@@ -19,7 +20,7 @@ let create = async(req, res, next)=>{
         timeZone: "America/Bogota"
       },
       end:{
-        dateTime: dayjs(req.body.fin).toISOString(),
+        dateTime: fechaFinal.toISOString(),
         timeZone: "America/Bogota"
       }
     }
@@ -37,6 +38,7 @@ let create = async(req, res, next)=>{
         req.body.cliente_id = cliente._id
         req.body.calendario_id = createdCalendar.data.id 
         req.body.summary = 'Cita con AirFashion'
+        req.body.fin = fechaFinal
         req.body.description = 'Servicio de referencia'
         req.body.status = 'PENDING'
     
@@ -69,9 +71,6 @@ let create = async(req, res, next)=>{
         Response:'Internal Server error'
       })
     }
-   
-
-   
 }
 
 export default create
