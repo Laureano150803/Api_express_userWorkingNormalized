@@ -14,7 +14,7 @@ let create = async(req, res, next)=>{
   
     const event = {
       summary: 'Cita con AirFashion',
-      description: 'Servicio de referencia',
+      description: req.body.description,
       start:{
         dateTime: dayjs(req.body.inicio).toISOString(),
         timeZone: "America/Bogota"
@@ -39,8 +39,8 @@ let create = async(req, res, next)=>{
         req.body.calendario_id = createdCalendar.data.id 
         req.body.summary = 'Cita con AirFashion'
         req.body.fin = fechaFinal
-        req.body.description = 'Servicio de referencia'
         req.body.status = 'PENDING'
+      
     
         const one = await Cita.create(req.body)
   
@@ -62,7 +62,6 @@ let create = async(req, res, next)=>{
      
       
     } catch (error) {
-      console.log(error)
       return res.status(500).json({
         status:500,
         success:false,
