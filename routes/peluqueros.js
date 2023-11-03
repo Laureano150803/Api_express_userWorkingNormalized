@@ -7,7 +7,7 @@ import updateById from "../controllers/peluqueros/updateById.js";
 import getPeluquerosDisponibles from "../controllers/peluqueros/GetPeluquerosDisponibles.js";
 import passport from "passport";
 router.get('/:inicio', getPeluquerosDisponibles)
-router.get('/',passport.authenticate('jwt', {session:false}), read)
+router.get('/', read)
 router.delete('/:id',passport.authenticate('jwt', {session:false}), deleteById)
 router.post('/new',passport.authenticate('jwt', {session:false}), create )
 router.put('/:id', passport.authenticate('jwt', {session:false}), updateById )
