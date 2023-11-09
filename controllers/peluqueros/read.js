@@ -2,7 +2,7 @@ import Peluquero from '../../models/Peluquero.js'
 
 let read = async(req, res)=>{
     try {
-        const all = await Peluquero.find()
+        const all = await Peluquero.find().populate('user_id')
         if(all){
             return res.status(200).json({
                 status:200,
