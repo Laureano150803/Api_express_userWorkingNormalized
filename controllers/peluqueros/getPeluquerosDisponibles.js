@@ -13,10 +13,12 @@ const getPeluquerosDisponibles = async (req, res) => {
 
     const ocupados = peluquerosOcupados.map(id => id.toString());
 
-    const todosLosPeluqueros = await Peluquero.find();
+    const todosLosPeluqueros = await Peluquero.find().populate('user_id')
 
     // Filtrar los peluqueros que no están ocupados
     const peluquerosDisponibles = todosLosPeluqueros.filter(peluquero => !ocupados.includes(peluquero._id.toString()));
+
+    
 
 
     res.status(200).json({
