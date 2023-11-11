@@ -9,7 +9,8 @@ const citaSchema = new mongoose.Schema({
   fin:{type:String, required:true},
   status:{type:String, required:true},
   cliente_id:{type:Types.ObjectId, ref:'clientes', required:true},
-  peluquero_id:{type:Types.ObjectId, ref:'peluqueros', required:true}
+  peluquero_id:{type:Types.ObjectId, ref:'peluqueros', required:true},
+  servicio_id:{type:Types.ObjectId, ref:'servicios', required:true}
 }, {
     timestamps: true
 });
