@@ -6,6 +6,8 @@ import google_router from './google_calendar.js'
 import peluqueros_router from './peluqueros.js'
 import servicio_router from './servicios.js'
 import servicesTyperRouter from './servicesTypes.js'
+import comprasRouter from './compras.js'
+import paymentsRouter from './payments.js'
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -17,4 +19,6 @@ router.use('/google', google_router)
 router.use('/peluqueros', peluqueros_router)
 router.use('/services', servicio_router)
 router.use('/types', servicesTyperRouter)
+router.use('/purchase',comprasRouter)
+router.use('/payment', paymentsRouter)
 export default router
