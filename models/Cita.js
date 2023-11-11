@@ -7,6 +7,7 @@ const citaSchema = new mongoose.Schema({
   description:{type:String, required:true},
   inicio:{type:String, required:true},
   fin:{type:String, required:true},
+  metodoPago:{type:String, required:true},
   status:{type:String, required:true},
   cliente_id:{type:Types.ObjectId, ref:'clientes', required:true},
   peluquero_id:{type:Types.ObjectId, ref:'peluqueros', required:true},
