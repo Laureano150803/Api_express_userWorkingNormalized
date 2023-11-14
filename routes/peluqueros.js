@@ -10,8 +10,8 @@ import uploadImage from "../services/firebase.cjs";
 import Multer from "../middlewares/multer.js";
 router.get('/:inicio', getPeluquerosDisponibles)
 router.get('/', read)
-router.delete('/:id',passport.authenticate('jwt', {session:false}), deleteById)
+router.delete('/:id',/* passport.authenticate('jwt', {session:false}), */ deleteById)
 router.post('/new',passport.authenticate('jwt', {session:false}),Multer.single("foto"),uploadImage, create )
-router.patch('/:id', /* passport.authenticate('jwt', {session:false}), */ updateById )
+router.patch('/:id', /* passport.authenticate('jwt', {session:false}), */Multer.single("foto"),  updateById )
 
 export default router
