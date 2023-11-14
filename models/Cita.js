@@ -13,7 +13,8 @@ const citaSchema = new mongoose.Schema({
   peluquero_id:{type:Types.ObjectId, ref:'peluqueros', required:true},
   servicio_id:{type:Types.ObjectId, ref:'servicios', required:true}
 }, {
-    timestamps: true
+    timestamps: true,
+    strictPopulate: false
 });
 let collection = 'citas'
 
