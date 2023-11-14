@@ -8,6 +8,8 @@ import servicio_router from './servicios.js'
 import servicesTyperRouter from './servicesTypes.js'
 import comprasRouter from './compras.js'
 import paymentsRouter from './payments.js'
+import  checktoken from './checktoken.js'
+import passport from 'passport';
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -21,4 +23,5 @@ router.use('/services', servicio_router)
 router.use('/types', servicesTyperRouter)
 router.use('/purchase',comprasRouter)
 router.use('/payment', paymentsRouter)
+router.get('/auth',passport.authenticate('jwt', {session:false}), checktoken)
 export default router
