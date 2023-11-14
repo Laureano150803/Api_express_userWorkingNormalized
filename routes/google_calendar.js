@@ -11,7 +11,7 @@ import cancel from "../controllers/google_calendar/cancel.js";
 import updateStatus from "../controllers/google_calendar/updateStatus.js";
 import allPendings from "../controllers/google_calendar/getAllPendings.js";
 import allDone from "../controllers/google_calendar/getAllDone.js";
-router.get('/appointment/:p_id',passport.authenticate('jwt', {session:false}), citaByPeluquero)
+router.get('/allMyAppointments',passport.authenticate('jwt', {session:false}), citaByPeluquero)
 router.delete('/:id',passport.authenticate('jwt', {session:false}), cancel)
 router.get('/',passport.authenticate('jwt', {session:false}) , googleAccountVerify)
 router.get('/redirect', redirect)
