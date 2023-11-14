@@ -2,7 +2,7 @@ import Peluquero from "../../models/Peluquero.js";
 
 let updateById = async(req, res, next)=>{
     try {
-        const updated = await Peluquero.updateById(req.params.id, req.body,  {new:true})
+        const updated = await Peluquero.findByIdAndUpdate(req.params.id, req.body,  {new:true})
         if (updated) {
             return res.status(200).json({
                 status:200,
