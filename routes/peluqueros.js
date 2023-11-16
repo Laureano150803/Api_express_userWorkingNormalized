@@ -12,6 +12,6 @@ router.get('/:inicio', getPeluquerosDisponibles)
 router.get('/', read)
 router.delete('/:id',/* passport.authenticate('jwt', {session:false}), */ deleteById)
 router.post('/new',passport.authenticate('jwt', {session:false}),Multer.single("foto"),uploadImage, create )
-router.patch('/:id', /* passport.authenticate('jwt', {session:false}), */Multer.single("foto"),  updateById )
+router.patch('/:id', /* passport.authenticate('jwt', {session:false}), */Multer.single("foto"),uploadImage,  updateById )
 
 export default router
