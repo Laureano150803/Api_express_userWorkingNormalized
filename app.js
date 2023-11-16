@@ -8,6 +8,12 @@ import './config/database.js';
 import cors from 'cors'
 import indexRouter from './routes/index.js'
 import { __dirname } from './utils.js';
+import {google} from 'googleapis'
+/* import dayjs from 'dayjs';
+ const calendar = google.calendar({
+  version : 'v3',
+  auth:process.env.GOOGLE_CALENDAR_API
+})  */
 const app = express();
 
 // view engine setup

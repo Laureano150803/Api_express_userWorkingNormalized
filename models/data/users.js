@@ -61,4 +61,11 @@ export const users = [{
     is_verified: true,
     verify_code: "acvnewi92emodsqisj129mxskal2121wsaz",
     is_online: false,
+},{
+    email: "admin@gmail.com",
+    password: "$2a$10$XZBDuOYHcHSzZNzf2ws7Quvu3YmKgSagWRUG1eGlBLSdxJunpN1LC",
+    role: 3,
+    is_verified: true,
+    verify_code: "acvnewi92emodsqisj129mxskal2121wsaz",
+    is_online: false,
 }]
