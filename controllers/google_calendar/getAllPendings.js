@@ -2,7 +2,7 @@ import Cita from "../../models/Cita.js";
 
 const allPendings = async(req, res)=>{
     try {
-        const all = await Cita.find({status:'PENDING'}).populate('cliente_id servicio_id ')
+        const all = await Cita.find({status:'PENDING'}).populate('cliente_id servicio_id peluquero_id')
        
         if (all.length ===0) {
             return res.status(200).json({
