@@ -2,7 +2,7 @@ import Cita from "../../models/Cita.js";
 
 const allDone = async(req, res)=>{
     try {
-        const all = await Cita.find({status:'DONE'})
+        const all = await Cita.find({status:'DONE'}).populate('servicio_id')
        
         if (all.length ===0) {
             return res.status(200).json({
