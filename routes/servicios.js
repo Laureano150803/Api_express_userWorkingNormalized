@@ -7,7 +7,7 @@ import update from "../controllers/servicio/updateAll.js";
 import Multer from "../middlewares/multer.js";
 import uploadImage from "../services/firebase.cjs";
 
-router.post('/new',create)
+router.post('/new', Multer.single('foto'), uploadImage, create)
 router.get('/',read)
 router.delete('/:id', deleteById)
 router.put('/:id',Multer.single('foto'), uploadImage, update)
