@@ -11,8 +11,11 @@ import cancel from "../controllers/google_calendar/cancel.js";
 import updateStatus from "../controllers/google_calendar/updateStatus.js";
 import allPendings from "../controllers/google_calendar/getAllPendings.js";
 import allDone from "../controllers/google_calendar/getAllDone.js";
+import citaByCliente from "../controllers/google_calendar/findCitaByCliente.js";
 router.get('/allMyAppointments',passport.authenticate('jwt', {session:false}), citaByPeluquero)
-router.delete('/:id',passport.authenticate('jwt', {session:false}), cancel)
+router.get('/client/allMyAppointments',passport.authenticate('jwt', {session:false}), citaByCliente)
+
+router.patch('/cancel/:id',passport.authenticate('jwt', {session:false}),cancel)
 router.get('/',passport.authenticate('jwt', {session:false}) , googleAccountVerify)
 router.get('/redirect', redirect)
 router.post('/new/appointment',passport.authenticate('jwt', {session:false}),isClient , create)
