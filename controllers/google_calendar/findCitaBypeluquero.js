@@ -5,7 +5,6 @@ const citaByPeluquero = async (req, res, next) => {
         const peluquero = await Peluquero.findOne({user_id:req.user.id})
         const citas = await Cita.find({ peluquero_id: peluquero._id})
             .populate('servicio_id cliente_id');
-         // Usar populate para cargar los detalles de peluquero y cliente
         if (citas) {
             return res.status(200).json({
                 status: 200,
