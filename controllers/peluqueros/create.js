@@ -2,20 +2,17 @@ import Peluquero from "../../models/Peluquero.js"
 import User from '../../models/User.js'
 
 
+
 let create = async(req, res, next)=>{
 
     try {
-         req.body.user_id = req.user._id
-
+         const user = await User.findOneAndUpdate({email:req.body.email},{role:2},{new:true})
+        
+         req.body.user_id = user._id
+         const{firebaseUrl} = req.file || ''
+         req.body.foto = firebaseUrl
         let one = await Peluquero.create(req.body)
-
-        await User.findByIdAndUpdate(
-            req.user._id,
-            {
-                role:1
-            },
-            {new:true})
-
+        
         return res.status(201).json({
             status:201,
             success:true,
@@ -23,7 +20,7 @@ let create = async(req, res, next)=>{
     }) 
         
     } catch (error) {
-        next(error)
+        console.log(error)
         return res.status(400).json({
             status:400,
             success:false,
