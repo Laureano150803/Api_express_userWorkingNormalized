@@ -10,9 +10,9 @@ export const transporter = nodemailer.createTransport({
       pass: process.env.PASSWORD_EMAIL,
     },
   });
-  transporter.verify().then(()=>{
+ /*  transporter.verify().then(()=>{
     console.log('Ready for send emails')
-  })
+  }) */
 
   const mailer= async (req, res)=>{
     const mail = await transporter.sendMail({
