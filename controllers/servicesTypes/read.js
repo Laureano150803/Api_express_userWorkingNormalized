@@ -1,7 +1,7 @@
-import ServicesTypes from "../../models/servicesTypes.js";
+import servicesTypes from "../../models/ServicesTypes.js";
 const read = async(req, res)=>{
     try {
-        const type = await ServicesTypes.find()
+        const type = await servicesTypes.find()
         if(type){
             return res.status(200).json({
                 status:200,
